@@ -1,0 +1,21 @@
+---
+- name: Create a new token using controller username/password
+  hosts: localhost
+  vars_files: 
+    aap_vars.yml
+
+  tasks: 
+
+    - name: Create a new token using controller username/password
+      ansible.controller.token:
+        description: 'Creating token to test controller jobs'
+        scope: "write"
+        state: present
+        controller_host: "{{ aap_hostname }}"
+        aap_username: "{{ aap_username }}"
+        aap_password: "{{ aap_password }}"
+      register: oauth_token
+
+    - name: Display the OAuth token
+      ansible.builtin.debug:
+        var: oauth_token
