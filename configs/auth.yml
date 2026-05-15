@@ -1,0 +1,4 @@
+aap_hostname: https://aap-aap.apps.cluster-wlghn-1.dynamic2.redhatworkshops.io
+aap_username: cnorville
+aap_password: "{{ my_aap_password }}"
+aap_validate_certs: true

@@ -1,0 +1,14 @@
+---
+eda_rulebook_activations:
+  - name: Z/OS 
+    description: Hook to listen for events realted to Z/OS
+    organization: Default
+    project: Event Driven Ansible Rulebooks - Norville
+    rulebook: eda_webhook_submit_jcl.yml
+    decision_environment: Default Decision Environment
+    event_streams:
+      - event_stream: "Event Stream for Z/OS related routines"
+        source_index: 0
+    eda_credentials: Controller Credential
+    enabled: false
+    state: present

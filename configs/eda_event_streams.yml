@@ -1,0 +1,6 @@
+---
+eda_event_streams:
+  - name: Event Stream for Z/OS related routines
+    credential_name: "EDA Webhook Cred for Event Streams"
+    organization: Default
+    forward_events: true

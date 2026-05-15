@@ -1,0 +1,5 @@
+controller_groups:
+  - name: zos
+    inventory: Z/OS
+    hosts: 
+      - zxp.ibmz.ibm.com

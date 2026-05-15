@@ -1,0 +1,88 @@
+---
+controller_templates:
+- name: Z/OS - Simple Ping
+  description: Ping a Z/OS System for connectivity
+  job_type: run
+  execution_environment: EE-ZOS
+  inventory: Z/OS
+  project: Z/OS
+  playbook: zos_ping.yml
+  credentials:
+  - ZXplore
+  survey: {}
+
+- name: Z/OS - Submit a Job and Create SNOW Ticket
+  description: Submit a JCL job to Z/OS and create and update SNOW incident
+  job_type: run
+  execution_environment: EE-ZOS
+  inventory: Z/OS
+  project: Z/OS
+  playbook: zos_submit_job_snow.yml
+  credentials:
+  - ZXplore
+  - SNOW - C. Norville
+  survey: {}
+
+- name: Z/OS - Gather facts
+  description: Gather system facts for a Z/OS System
+  job_type: run
+  execution_environment: EE-ZOS
+  inventory: Z/OS
+  project: Z/OS
+  playbook: zos_gather_facts.yml
+  credentials:
+  - ZXplore
+  survey: {}
+
+- name: Instana - Create a Bastion host for Instana AAP
+  description: Create an Instana Bastion host in AWS
+  job_type: run
+  execution_environment: "Default execution environment"
+  inventory: "Demo Inventory"
+  project: Instana
+  playbook: create_instana_bastion.yml
+  credentials:
+  - AWS
+  extra_vars:
+    my_remote_ssh_pub_key: "{{ my_remote_ssh_pub_key }}"
+
+- name: Instana - Add Bastion to AAP Inventory
+  description: Add Instana Bastion host to AAP Inventory
+  job_type: run
+  execution_environment: "Default execution environment"
+  inventory: "Demo Inventory"
+  project: Instana
+  playbook: inventory_instana_bastion.yml
+  credentials:
+  - AWS
+  - AAP Credential
+
+- name: Instana - Install agent
+  description: Install the Instana agent
+  job_type: run
+  execution_environment: "Default execution environment"
+  inventory: "AAP Managed Inventory"
+  project: Instana
+  playbook: instana_install_agent.yml
+  credentials:
+  - AWS Machine Credential
+
+- name: Instana - Enable http actions for agent
+  description: Enable https actions for the Instana Agent
+  job_type: run
+  execution_environment: "Default execution environment"
+  inventory: "AAP Managed Inventory"
+  project: Instana
+  playbook: instana_enable_http_action.yml
+  credentials:
+  - AWS Machine Credential
+
+- name: Instana - Enable http actions 
+  description: Enable https actions for the Instana Agent
+  job_type: run
+  execution_environment: "Default execution environment"
+  inventory: "AAP Managed Inventory"
+  project: Instana
+  playbook: instana_configure_webservers.yml
+  credentials:
+  - AWS Machine Credential

@@ -1,0 +1,7 @@
+---
+eda_projects:
+  - name: Event Driven Ansible Rulebooks - Norville
+    description: All of Chris Norville EDA Rulebooks
+    url: https://github.com/cnorville90/ansible-eda.git
+    tls_validation: true
+    organization: Default

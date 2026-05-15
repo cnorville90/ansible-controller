@@ -1,0 +1,7 @@
+---
+controller_execution_environments:
+  - name: "EE-ZOS"
+    description: "EE for Z/OS Systems"
+    image: quay.io/cnorvill/zos_snow:v1.0
+    organization: "{{ my_org }}"
+    pull: missing

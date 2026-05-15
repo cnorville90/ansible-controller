@@ -1,0 +1,14 @@
+---
+controller_projects:
+- name: Z/OS 
+  description: Z/OS Related Playbooks 
+  organization: "{{ my_org }}"
+  scm_branch: main
+  scm_type: git
+  scm_url: https://github.com/cnorville90/ansible-zos.git
+- name: Instana
+  description: Instana / AAP Related Playbooks 
+  organization: "{{ my_org }}"
+  scm_branch: main
+  scm_type: git
+  scm_url: https://github.com/cnorville90/ansible-instana.git

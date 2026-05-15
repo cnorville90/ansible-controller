@@ -1,0 +1,4 @@
+controller_inventories: 
+  - name: "Z/OS"
+    organization: Vandelay Industries
+    description: Z/OS Mainframe Hosts
